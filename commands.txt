@@ -1,0 +1,38 @@
+docker -v
+docker images
+docker ps
+
+docker run hello-world
+docker images
+docker ps -a
+
+docker rm ID
+docker rmi ImageId
+
+docker pull ubuntu
+docker run -d --name web nginx
+docker run -d --name web1 -p 80:80 nginx
+docker ps
+
+ipconfig
+
+docker ps
+docker kill
+docker ps -a
+docker rm ID   
+docker rm ID
+
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=123 -d mysql
+docker ps
+docker exec -it <container id> /bin/bash
+env
+exit
+
+docker-compose up -d
+docker-compose ps
+docker-compose down
+
+
+
+
+
