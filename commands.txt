@@ -28,6 +28,8 @@ docker exec -it <container id> /bin/bash
 env
 exit
 
+docker build -t js-server-app .
+
 docker-compose up -d
 docker-compose ps
 docker-compose down
