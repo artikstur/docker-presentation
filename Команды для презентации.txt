@@ -1,3 +1,5 @@
+Команды для п
+
 docker -v
 docker images
 docker ps
