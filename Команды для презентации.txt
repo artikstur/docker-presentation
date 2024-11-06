@@ -11,9 +11,7 @@ docker ps -a
 docker rm ID
 docker rmi ImageId
 
-docker pull ubuntu
-docker run -d --name web nginx
-docker run -d --name web1 -p 80:80 nginx
+docker run -d --name web -p 80:80 nginx
 docker ps
 
 ipconfig
@@ -31,10 +29,19 @@ env
 exit
 
 docker build -t js-server-app .
+docker run -d --name js-server-app -p 80:80 js-server-app
 
 docker-compose up -d
 docker-compose ps
 docker-compose down
+
+docker run --rm --network none alpine ping -c 3 google.com
+
+docker network create my-bridge-network
+docker run -d --name container1 --network my-bridge-network alpine sleep 1000
+docker run -d --name container2 --network my-bridge-network alpine sleep 1000
+docker exec -it container1 ping -c 3 container2
+
 
 
 
